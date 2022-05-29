@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .inputs {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" placeholder="Фамилия Имя Отчество" class="user">
+    <button onclick="getName()">Ввести</button>
+    <div class="inputs">
+        <div>Имя <input type="text" class="name" placeholder="имя"></div>
+        <div>Отчество <input type="text" class="secondname" placeholder="отчество"></div>
+        <div>Фамилия <input type="text" class="surname" placeholder="фамилия"></div>
+    </div>
+
+
+
+
+    <script>
+        function getName() {
+            let user = document.querySelector('.user').value;
+            let name = document.querySelector('.name');
+            let secondname = document.querySelector('.secondname');
+            let surname = document.querySelector('.surname');
+            let array = user.split(' ');
+
+            let formName = array[1];
+            formName = formName.toLowerCase();
+            formName = formName.trim();
+            formName = formName[0].toUpperCase() + formName.slice(1);
+
+            let formSecondame = array[2];
+            formSecondame = formSecondame.toLowerCase();
+            formSecondame = formSecondame.trim();
+            formSecondame = formSecondame[0].toUpperCase() + formSecondame.slice(1);
+
+            let formSurname = array[0];
+            formSurname = formSurname.toLowerCase();
+            formSurname = formSurname.trim();
+            formSurname = formSurname[0].toUpperCase() + formSurname.slice(1);
+
+
+            name.value = formName;
+            secondname.value = formSecondame;
+            surname.value = formSurname;
+        }
+    </script>
+</body>
+
+</html>
